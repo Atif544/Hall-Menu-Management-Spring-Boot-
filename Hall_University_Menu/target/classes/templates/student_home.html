@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Dashboard</title>
+    <style>
+        body {text-align: center; font-family: Arial; background-color: #f5f5f5;}
+        h2 {color: #2c3e50;}
+        .btn {
+            display: block; width: 200px;
+            margin: 10px auto; padding: 10px;
+            background-color: #27ae60; color: white;
+            text-decoration: none; border-radius: 5px;
+        }
+        .btn:hover { background-color: #219150; }
+    </style>
+</head>
+<body>
+<h2>Student Dashboard</h2>
+<a href="/student/menus" class="btn">View Menus</a>
+<a href="/student/bookings?userId=1" class="btn">My Bookings (User 1)</a>
+<a href="/student/bookings?userId=2" class="btn">My Bookings (User 2)</a>
+<a href="/student/bookings?userId=3" class="btn">My Bookings (User 3)</a>
+<a href="/" class="btn" style="background-color:gray;">Back to Home</a>
+</body>
+</html>

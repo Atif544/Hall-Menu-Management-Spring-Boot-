@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Bookings</title>
+</head>
+<body>
+<h2 th:text="'Bookings for ' + ${username}"></h2>
+<p>Total Cost: <span th:text="${totalCost}"></span> Taka</p>
+
+<table border="1">
+    <tr>
+        <th>Menu ID</th>
+        <th>Status</th>
+        <th>Feedback</th>
+    </tr>
+    <tr th:each="b : ${bookings}">
+        <td th:text="${b.menuId}"></td>
+        <td th:text="${b.status}"></td>
+        <td>
+            <a th:href="@{'/student/feedback?userId=' + ${userId} + '&menuId=' + ${b.menuId}}">
+                Give Feedback
+            </a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

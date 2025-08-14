@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin - Bookings</title>
+</head>
+<body>
+<h2>All Bookings</h2>
+
+<table border="1">
+  <thead>
+  <tr>
+    <th>Booking ID</th>
+    <th>Username</th>
+    <th>Menu</th>
+    <th>Cost</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="b : ${bookingViews}">
+    <td th:text="${b.bookingId}"></td>
+    <td th:text="${b.username}"></td>
+    <td th:text="${b.menuInfo}"></td> <!-- ✅ fixed -->
+    <td th:text="${b.cost}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<h3>Total Cost: <span th:text="${totalCost}"></span></h3>
+
+<br>
+<a href="/admin/menus">Back to Menus</a> |
+<a href="/admin/feedbacks">View Feedbacks</a>
+</body>
+</html>

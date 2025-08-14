@@ -1,0 +1,21 @@
+<h2>All Student Feedbacks</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Feedback ID</th>
+        <th>Username</th>
+        <th>Menu</th>
+        <th>Rating</th>
+        <th>Comment</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="f : ${feedbackViews}">
+        <td th:text="${f.feedbackId}"></td>
+        <td th:text="${f.username}"></td>
+        <td th:text="${f.menuInfo}"></td>
+        <td th:text="${f.rating}"></td>
+        <td th:text="${f.comment}"></td>
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+<h2>Available Menus</h2>
+<table border="1">
+    <tr>
+        <th>ID</th><th>Day</th><th>Meal Type</th>
+        <th>Items</th><th>Price</th><th>Action</th>
+    </tr>
+    <tr th:each="menu : ${menus}">
+        <td th:text="${menu.id}"></td>
+        <td th:text="${menu.day}"></td>
+        <td th:text="${menu.mealType}"></td>
+        <td th:text="${menu.items}"></td>
+        <td th:text="${menu.cost}"></td>
+        <td>
+            <form action="/student/book" method="post">
+                <select name="userId" required>
+                    <option value="">--Select User--</option>
+                    <option th:each="u : ${users}" th:value="${u.id}" th:text="${u.username}"></option>
+                </select>
+                <input type="hidden" name="menuId" th:value="${menu.id}"/>
+                <button type="submit">Book</button>
+            </form>
+        </td>
+    </tr>
+</table>

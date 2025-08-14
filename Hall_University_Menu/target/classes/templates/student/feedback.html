@@ -1,0 +1,21 @@
+<h2>Give Feedback</h2>
+<div>
+    <h3>Menu ID: <span th:text="${menu.id}"></span></h3>
+    <p>Day: <span th:text="${menu.day}"></span></p>
+    <p>Meal Type: <span th:text="${menu.mealType}"></span></p>
+    <p>Items: <span th:text="${menu.items}"></span></p>
+    <p>Cost: <span th:text="${menu.cost}"></span></p>
+</div>
+<hr>
+<form action="/student/feedback" method="post">
+    <input type="hidden" name="userId" th:value="${userId}" />
+    <input type="hidden" name="menuId" th:value="${menu.id}" />
+
+    <label>Rating (1-5):</label>
+    <input type="number" name="rating" min="1" max="5" required />
+    <br><br>
+    <label>Comment:</label>
+    <textarea name="comment" rows="4" cols="40" required></textarea>
+    <br><br>
+    <button type="submit">Submit Feedback</button>
+</form>
